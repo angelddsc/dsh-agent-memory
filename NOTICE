@@ -1,5 +1,10 @@
 # NOTICE
 
+本项目（dsh-agent-memory）以 MIT 许可发布，版权人：Copyright (c) 2026 纸团。
+完整的 MIT 许可文本见 [LICENSE](LICENSE)。
+
+下方是**衍生代码的上游署名**——按 MIT 许可要求必须保留。
+
 本项目的部分代码衍生自第三方项目。按 MIT 许可要求，在此保留原始版权声明并说明衍生范围。
 
 ## qq-dsh-bridge
