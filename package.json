@@ -1,0 +1,49 @@
+{
+  "name": "dsh-agent-memory",
+  "version": "0.1.0",
+  "description": "四层记忆层，给长期运行的 LLM agent 用：原文库倒排检索、日记/周记/月报金字塔、长期记忆、产物索引，外加闲置边界上下文压缩",
+  "type": "module",
+  "main": "src/index.js",
+  "exports": {
+    ".": "./src/index.js",
+    "./store": "./src/store.js",
+    "./recall": "./src/recall.js",
+    "./artifacts": "./src/artifacts.js",
+    "./idle-compact": "./src/idle-compact.js"
+  },
+  "files": [
+    "src",
+    "docs",
+    "README.md",
+    "LICENSE",
+    "NOTICE"
+  ],
+  "scripts": {
+    "test": "node --test test/",
+    "test:store": "node --test test/store.test.mjs",
+    "test:recall": "node --test test/recall.test.mjs",
+    "test:artifacts": "node --test test/artifacts.test.mjs"
+  },
+  "keywords": [
+    "llm",
+    "agent",
+    "memory",
+    "long-term-memory",
+    "rag",
+    "inverted-index",
+    "context-compaction",
+    "dsh",
+    "deepseek-harness"
+  ],
+  "engines": {
+    "node": ">=22.5.0"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/angelddsc/dsh-agent-memory.git"
+  },
+  "bugs": {
+    "url": "https://github.com/angelddsc/dsh-agent-memory/issues"
+  }
+}

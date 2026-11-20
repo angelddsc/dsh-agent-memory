@@ -1,0 +1,31 @@
+# NOTICE
+
+本项目的部分代码衍生自第三方项目。按 MIT 许可要求，在此保留原始版权声明并说明衍生范围。
+
+## qq-dsh-bridge
+
+- 来源：https://github.com/NoMindSama/qq-dsh-bridge
+- 许可：MIT
+- 原始版权：Copyright (c) 2026 Derpyu520 and qq-bridge / QSH contributors
+
+### 衍生范围
+
+| 本仓库文件 | 来源 | 衍生方式 |
+|---|---|---|
+| `src/store.js` | `src/remember-store.js` | 抽取自 QQ 桥接的完整模块，去掉了 `D:\remember` 写死路径与桥接依赖，其余实现（含 `cutAtSentence` 逐句截断）保持原样 |
+| `src/recall.js` | `src/memory-search.js` | 保留上游的 bigram 倒排思路与 `search/format/stats` 接口；数据源由上游的 `events/*.jsonl` 改为 SQLite `messages` 表 |
+| `src/artifacts.js` | `src/artifact-store.js` | **几乎逐字移植**，仅调整默认目录 |
+| `src/idle-compact.js` | 上游的闲置边界压缩设计 | 重新实现并修了若干问题（上下文估计改为多步最大值、压缩状态持久化、失败退避、记忆整理冷却、新消息解锁）。上游的原始设计思路与失败路径取舍来自该项目 |
+
+未包含的部分：上游的 `bridge.js`、`send-file-lib.js`、MCP 工具层、preset 配置等均**不在本仓库内**，也不在本项目授权范围内。
+
+### 上游的第三方合规提醒（摘要）
+
+上游项目 README/NOTICE 中记录了一条与我们无关但值得转述的边界：该项目通过 OneBot 协议与
+SnowLuma（源码可见非商业许可）通信，但**不包含、不分发** SnowLuma 的源码或二进制。
+本项目是纯记忆层，**不涉及任何 QQ / OneBot / SnowLuma 相关代码或依赖**。
+
+## 无其他第三方依赖
+
+本项目运行时不依赖任何 npm 包，只使用 Node.js 内置模块（`node:fs`、`node:path`、`node:crypto`、`node:sqlite`）。
+测试使用 Node 内置的 `node:test`。

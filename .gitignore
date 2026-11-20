@@ -1,0 +1,22 @@
+# Node
+node_modules/
+npm-debug.log*
+pnpm-debug.log*
+yarn-error.log*
+
+# 运行时数据（记忆库本身不该进仓库）
+memory/
+*.db
+*.db-journal
+*.db-wal
+*.jsonl
+
+# 编辑器
+.vscode/
+.idea/
+*.swp
+
+# 系统
+.DS_Store
+Thumbs.db
+desktop.ini
