@@ -1,4 +1,4 @@
-// remember-store.js - 她所有"记得"的东西，统一放在 D:\remember
+// store.js —— 文件层：长期记忆 / 事务本 / 日记 / 周记 / 月报，全部落在 <memory>/ 目录下。
 //
 // 结构：
 //   memory/people.json          长期：一本账（谁是谁、聊过什么、互动多少次）

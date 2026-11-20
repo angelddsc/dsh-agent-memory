@@ -1,7 +1,7 @@
 // memory-search.js —— 中文 bigram 倒排检索（2026-11-19 从上游 qq-dsh-bridge 移植并改造）
 //
-// 上游原版索引的是 events/*.jsonl；我们这边的原文库是 SQLite（D:\remember\archive.db），
-// 所以这里换成从 messages 表取数 —— 接口保持一致（search / format / stats）。
+// 上游原版索引的是 events/*.jsonl；这里的原文库改用 SQLite（默认 <memory>/archive.db），
+// 所以从 messages 表取数 —— 对外接口保持一致（search / format / stats）。
 //
 // 为什么用 bigram 倒排而不是向量检索：
 //   · 现在是 3,300 条、约 1.5 MB，全量建索引 < 200ms，常驻内存 20~40MB；

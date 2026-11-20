@@ -63,9 +63,9 @@ test('gramsOf：中文按 2 字滑窗，英文/数字按整词，返回 Set', ()
 test('检索：中文查询能命中（靠 bigram，不是整词匹配）', () => {
   const dbFile = makeDb([
     // 查询「发文件」在原文里并不连续出现，但「文件」「件发」这些二元组能连上
-    { ts: T('2026-11-04T10:07:33'), dir: 'in', who: 'Loser', text: '要不你把那个文件发我一下' },
-    { ts: T('2026-11-05T09:00:00'), dir: 'in', who: 'Loser', text: '今天吃什么' },
-    { ts: T('2026-11-06T09:00:00'), dir: 'in', who: 'Loser', text: '外面下雨了' },
+    { ts: T('2026-11-04T10:07:33'), dir: 'in', who: '用户A', text: '要不你把那个文件发我一下' },
+    { ts: T('2026-11-05T09:00:00'), dir: 'in', who: '用户A', text: '今天吃什么' },
+    { ts: T('2026-11-06T09:00:00'), dir: 'in', who: '用户A', text: '外面下雨了' },
   ]);
   const recall = createRecall({ dbFile });
   assert.equal(recall.stats().docs, 3, '应该索引到 3 条');

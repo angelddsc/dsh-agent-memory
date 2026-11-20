@@ -2,6 +2,10 @@
   "name": "dsh-agent-memory",
   "version": "0.1.0",
   "description": "四层记忆层，给长期运行的 LLM agent 用：原文库倒排检索、日记/周记/月报金字塔、长期记忆、产物索引，外加闲置边界上下文压缩",
+  "author": {
+    "name": "纸团",
+    "email": "399700525@qq.com"
+  },
   "type": "module",
   "main": "src/index.js",
   "exports": {
